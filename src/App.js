@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Container  from 'react-bootstrap/Container'
+import { Routes, Route } from 'react-router-dom';
+import Signup from './domains/pages/authentication screens/Signup';
+
+import Welcome from './domains/pages/welcome/Welcome';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container  fluid style={{width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
+     
+      <Routes>
+        <Route exact path="/" element={ <Welcome/>}>
+        </Route>
+        <Route path="/signup" element={<Signup/>}>
+
+        </Route>
+      </Routes>
+
+    </Container >
   );
 }
 
