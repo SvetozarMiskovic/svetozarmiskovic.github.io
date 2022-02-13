@@ -1,8 +1,6 @@
 import Card  from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack'
 import Container from 'react-bootstrap/Container'
-import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
 
 import '../../../styles/Welcome.css'
@@ -19,7 +17,7 @@ const navLink = {
 
 
 function Welcome(){
-    const [hover, setHover] = useState(false)
+    
     return (
         <Container fluid style={{backgroundColor: '#C1B4AE', height: '100vh',}}>
         <Card className='welcome-comp' style={welcomeStyle}>
