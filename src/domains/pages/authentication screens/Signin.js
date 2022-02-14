@@ -4,21 +4,31 @@ import Form  from 'react-bootstrap/Form'
 import Button  from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 import {auth} from '../../../Firebase'
-import {connectAuthEmulator, signInWithEmailAndPassword} from 'firebase/auth'
+
+import {connectAuthEmulator, signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
 
 function Signin(){
+    
 
     const emailRef = useRef()
     const passwordRef = useRef()
     
-    connectAuthEmulator(auth, 'http://192.168.1.122:9099')
+    // connectAuthEmulator(auth, 'http://localhost:9099')
     
    function signIn(e){
            e.preventDefault()
-      
+        console.log(auth)
+            const googleProvider = new GoogleAuthProvider();
 
+            signInWithPopup(auth, googleProvider).then((result)=>{
+                console.log(result)
+                console.log("Signed in succesfully!")
+            }).catch((err)=>{
+                console.log('Something went wrong!')
+                console.log(err)
+            })
         
-          signInWithEmailAndPassword(auth, emailRef, passwordRef)
+          
     }
 
 

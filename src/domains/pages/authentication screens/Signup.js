@@ -3,7 +3,7 @@ import Container  from 'react-bootstrap/Container'
 import Form  from 'react-bootstrap/Form'
 import Button  from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-import {auth} from '../../../Firebase'
+
 import { connectAuthEmulator, signInWithEmailAndPassword } from 'firebase/auth'
 
 
@@ -13,7 +13,7 @@ function Signup(){
     const passwordRef = useRef()
     const confirmPasswordRef = useRef()
     
-    console.log(auth)
+
     
 
     return(
