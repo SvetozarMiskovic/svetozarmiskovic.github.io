@@ -15,21 +15,7 @@ function Signin(){
     
     // connectAuthEmulator(auth, 'http://localhost:9099')
     
-   function signIn(e){
-           e.preventDefault()
-        console.log(auth)
-            const googleProvider = new GoogleAuthProvider();
-
-            signInWithPopup(auth, googleProvider).then((result)=>{
-                console.log(result)
-                console.log("Signed in succesfully!")
-            }).catch((err)=>{
-                console.log('Something went wrong!')
-                console.log(err)
-            })
-        
-          
-    }
+  
 
 
     return(
@@ -37,7 +23,7 @@ function Signin(){
             <div style={{backgroundColor: '#2375ab',padding: '1rem',color: '#fff', maxWidth: '1140px', borderRadius: '0.2rem', minHeight: 500,position: 'relative', bottom: '-50%',right: '-50%',transform: 'translate(-50%, -50%)'}}>
                 <h1 className='text-center mb-4' style={{padding: '0.4rem'}}>Sign in</h1>
                 <h4 className='text-center mb-3'>Log into your account!</h4>
-                <Form onSubmit={signIn} style={{borderTop: '1px solid white', width: '100%',}}>
+                <Form  style={{borderTop: '1px solid white', width: '100%',}}>
                     <Form.Group className='mb-3 ' controlId='formBasicEmail' style={{padding: '0.6rem'}}>
                         
                         <Form.Label style={{fontSize: '2rem',}}>Enter email</Form.Label>
