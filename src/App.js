@@ -3,13 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import Signin from './domains/pages/authentication screens/Signin';
 import Signup from './domains/pages/authentication screens/Signup';
 import { onAuthStateChanged } from 'firebase/auth';
+import {auth} from './Firebase'
 import Welcome from './domains/pages/welcome/Welcome';
 import { useState } from 'react';
 
 function App() {
   const [signedIn, setSignedIn] = useState(false)
   
-  onAuthStateChanged((user)=>{
+  onAuthStateChanged(auth,(user)=>{
     if(user){
       return setSignedIn(true)
     }
